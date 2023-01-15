@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "micro/http-core": "^1"
+        "micro/plugin-http-core": "^1"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.29",
