@@ -1,12 +1,12 @@
 <?php
 
-/**
- * This file is part of the Micro framework package.
+/*
+ *  This file is part of the Micro framework package.
  *
- * (c) Stanislau Komar <kost@micro-php.net>
+ *  (c) Stanislau Komar <kost@micro-php.net>
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  */
 
 namespace Micro\Plugin\Http\Test\Unit;
@@ -15,6 +15,7 @@ use Micro\Component\DependencyInjection\Container;
 use Micro\Framework\Kernel\KernelInterface;
 use Micro\Framework\Kernel\Plugin\DependencyProviderInterface;
 use Micro\Plugin\Http\Business\Locator\RouteLocatorInterface;
+use Micro\Plugin\Http\Facade\HttpFacadeInterface;
 use Micro\Plugin\Http\HttpCorePlugin;
 use Micro\Plugin\Http\HttpRouterCodePlugin;
 use Micro\Plugin\Http\Plugin\HttpRouteLocatorPluginInterface;
@@ -25,14 +26,15 @@ class HttpRouterCodePluginTest extends TestCase
     protected \Micro\Plugin\Http\HttpRouterCodePlugin $plugin;
     protected Container $container;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->container = $this->createMock(Container::class);
         $this->plugin = new HttpRouterCodePlugin();
         $this->plugin->provideDependencies($this->container);
     }
 
-    public function testConstruct() {
+    public function testConstruct()
+    {
         $this->assertInstanceOf(HttpRouteLocatorPluginInterface::class, $this->plugin);
     }
 
@@ -44,11 +46,10 @@ class HttpRouterCodePluginTest extends TestCase
     public function testCreateLocator()
     {
         $this->container
-            ->expects($this->once())
             ->method('get')
-            ->with(KernelInterface::class)
             ->willReturn(
-                $this->createMock(KernelInterface::class)
+                $this->createMock(KernelInterface::class),
+                $this->createMock(HttpFacadeInterface::class)
             );
 
         $this->assertInstanceOf(RouteLocatorInterface::class, $this->plugin->createLocator());
@@ -62,7 +63,7 @@ class HttpRouterCodePluginTest extends TestCase
     public function testGetDependedPlugins()
     {
         $this->assertEquals(
-            [ HttpCorePlugin::class ],
+            [HttpCorePlugin::class],
             $this->plugin->getDependedPlugins()
         );
     }
