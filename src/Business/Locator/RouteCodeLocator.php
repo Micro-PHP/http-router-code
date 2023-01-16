@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-/**
- * This file is part of the Micro framework package.
+/*
+ *  This file is part of the Micro framework package.
  *
- * (c) Stanislau Komar <kost@micro-php.net>
+ *  (c) Stanislau Komar <kost@micro-php.net>
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  */
 
 namespace Micro\Plugin\Http\Business\Locator;
@@ -22,13 +22,10 @@ use Micro\Plugin\Http\Plugin\RouteProviderPluginInterface;
  */
 readonly class RouteCodeLocator implements RouteLocatorInterface
 {
-    /**
-     * @param KernelInterface $kernel
-     */
     public function __construct(
-        private KernelInterface $kernel
-    )
-    {
+        private KernelInterface $kernel,
+        private HttpFacadeInterface $httpFacade
+    ) {
     }
 
     /**
@@ -39,7 +36,7 @@ readonly class RouteCodeLocator implements RouteLocatorInterface
         $iterator = $this->kernel->plugins(RouteProviderPluginInterface::class);
         /** @var RouteProviderPluginInterface $plugin */
         foreach ($iterator as $plugin) {
-            foreach ($plugin->provideRoutes() as $route) {
+            foreach ($plugin->provideRoutes($this->httpFacade) as $route) {
                 yield $route;
             }
         }
