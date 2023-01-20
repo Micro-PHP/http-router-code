@@ -28,9 +28,9 @@ class RouteCodeLocatorTest extends TestCase
             ->expects($this->once())
             ->method('plugins')
             ->with(RouteProviderPluginInterface::class)
-            ->willReturn([
+            ->willReturn(new \ArrayObject([
                 $this->createRouteProvider(),
-            ]);
+            ]));
 
         $routerCodeLocator = new RouteCodeLocator($kernel, $httpFacadeMock);
         foreach ($routerCodeLocator->locate() as $route) {

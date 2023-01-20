@@ -15,7 +15,11 @@
     </projectFiles>
 
     <issueHandlers>
-
+        <ArgumentTypeCoercion>
+            <errorLevel type="info">
+                <file name="src/HttpRouterCodePlugin.php"/>
+            </errorLevel>
+        </ArgumentTypeCoercion>
         <UnnecessaryVarAnnotation>
             <errorLevel type="suppress">
                 <file name="src/HttpRouterCodePlugin.php"/>
