@@ -9,21 +9,22 @@
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Http\Test\Unit;
+namespace Micro\Plugin\HttpRouterCode\Tests\Unit;
 
-use Micro\Component\DependencyInjection\Container;
+use Micro\Framework\DependencyInjection\Container;
 use Micro\Framework\Kernel\KernelInterface;
-use Micro\Framework\Kernel\Plugin\DependencyProviderInterface;
-use Micro\Plugin\Http\Business\Locator\RouteLocatorInterface;
-use Micro\Plugin\Http\Facade\HttpFacadeInterface;
-use Micro\Plugin\Http\HttpCorePlugin;
-use Micro\Plugin\Http\HttpRouterCodePlugin;
-use Micro\Plugin\Http\Plugin\HttpRouteLocatorPluginInterface;
+use Micro\Framework\BootDependency\Plugin\DependencyProviderInterface;
+use Micro\Plugin\HttpCore\Business\Locator\RouteLocatorInterface;
+use Micro\Plugin\HttpCore\Facade\HttpFacadeInterface;
+use Micro\Plugin\HttpCore\HttpCorePlugin;
+use Micro\Plugin\HttpCore\Plugin\HttpRouteLocatorPluginInterface;
+use Micro\Plugin\HttpRouterCode\HttpRouterCodePlugin;
 use PHPUnit\Framework\TestCase;
 
 class HttpRouterCodePluginTest extends TestCase
 {
-    protected \Micro\Plugin\Http\HttpRouterCodePlugin $plugin;
+    protected HttpRouterCodePlugin $plugin;
+
     protected Container $container;
 
     protected function setUp(): void

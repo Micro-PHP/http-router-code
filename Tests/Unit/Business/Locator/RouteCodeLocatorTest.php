@@ -9,13 +9,13 @@
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Http\Test\Unit\Business\Locator;
+namespace Micro\Plugin\HttpRouterCode\Tests\Unit\Business\Locator;
 
 use Micro\Framework\Kernel\KernelInterface;
-use Micro\Plugin\Http\Business\Locator\RouteCodeLocator;
-use Micro\Plugin\Http\Business\Route\RouteInterface;
-use Micro\Plugin\Http\Facade\HttpFacadeInterface;
-use Micro\Plugin\Http\Plugin\RouteProviderPluginInterface;
+use Micro\Plugin\HttpCore\Business\Route\RouteInterface;
+use Micro\Plugin\HttpCore\Facade\HttpFacadeInterface;
+use Micro\Plugin\HttpRouterCode\Business\Locator\RouteCodeLocator;
+use Micro\Plugin\HttpRouterCode\Plugin\RouteProviderPluginInterface;
 use PHPUnit\Framework\TestCase;
 
 class RouteCodeLocatorTest extends TestCase

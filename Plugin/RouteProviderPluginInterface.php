@@ -11,10 +11,11 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Http\Plugin;
+namespace Micro\Plugin\HttpRouterCode\Plugin;
 
-use Micro\Plugin\Http\Business\Route\RouteInterface;
-use Micro\Plugin\Http\Facade\HttpFacadeInterface;
+
+use Micro\Plugin\HttpCore\Business\Route\RouteInterface;
+use Micro\Plugin\HttpCore\Facade\HttpFacadeInterface;
 
 /**
  * @author Stanislau Komar <kost@micro-php.net>

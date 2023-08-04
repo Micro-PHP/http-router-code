@@ -11,16 +11,17 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Http;
+namespace Micro\Plugin\HttpRouterCode;
 
-use Micro\Component\DependencyInjection\Container;
+use Micro\Framework\DependencyInjection\Container;
 use Micro\Framework\Kernel\KernelInterface;
-use Micro\Framework\Kernel\Plugin\DependencyProviderInterface;
-use Micro\Framework\Kernel\Plugin\PluginDependedInterface;
-use Micro\Plugin\Http\Business\Locator\RouteCodeLocator;
-use Micro\Plugin\Http\Business\Locator\RouteLocatorInterface;
-use Micro\Plugin\Http\Facade\HttpFacadeInterface;
-use Micro\Plugin\Http\Plugin\HttpRouteLocatorPluginInterface;
+use Micro\Framework\BootDependency\Plugin\DependencyProviderInterface;
+use Micro\Framework\BootPluginDependent\Plugin\PluginDependedInterface;
+use Micro\Plugin\HttpCore\Business\Locator\RouteLocatorInterface;
+use Micro\Plugin\HttpCore\Facade\HttpFacadeInterface;
+use Micro\Plugin\HttpCore\HttpCorePlugin;
+use Micro\Plugin\HttpCore\Plugin\HttpRouteLocatorPluginInterface;
+use Micro\Plugin\HttpRouterCode\Business\Locator\RouteCodeLocator;
 
 /**
  * @author Stanislau Komar <kost@micro-php.net>

@@ -11,11 +11,11 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Http\Test\Unit;
+namespace Micro\Plugin\HttpRouterCode\Tests\Unit;
 
-use Micro\Framework\Kernel\Configuration\DefaultApplicationConfiguration;
-use Micro\Kernel\App\AppKernel;
-use Micro\Plugin\Http\Facade\HttpFacadeInterface;
+use Micro\Framework\BootConfiguration\Configuration\DefaultApplicationConfiguration;
+use Micro\Framework\KernelApp\AppKernel;
+use Micro\Plugin\HttpCore\Facade\HttpFacadeInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 

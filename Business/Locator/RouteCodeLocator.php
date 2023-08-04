@@ -11,11 +11,12 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\Http\Business\Locator;
+namespace Micro\Plugin\HttpRouterCode\Business\Locator;
 
 use Micro\Framework\Kernel\KernelInterface;
-use Micro\Plugin\Http\Facade\HttpFacadeInterface;
-use Micro\Plugin\Http\Plugin\RouteProviderPluginInterface;
+use Micro\Plugin\HttpCore\Business\Locator\RouteLocatorInterface;
+use Micro\Plugin\HttpCore\Facade\HttpFacadeInterface;
+use Micro\Plugin\HttpRouterCode\Plugin\RouteProviderPluginInterface;
 
 /**
  * @author Stanislau Komar <kost@micro-php.net>
